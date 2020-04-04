@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125346989-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-125346989-1');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{asset('assets/img/MoiRondContourTest.png')}}" />
+        <title>{% block title %}Comptabilité - Clément Thuet {% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+            <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+            <link rel="stylesheet" href="{{asset('assets/css/compta.css')}}" />
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+        {% block body %}
+            <div class='container-fluid'>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <h1 class="titreCompta">Gestion financière de Clément </h1>
+                        Solde du compte : {{soldeCompte}}
+                        <table class="table table-bordered table-hover  table-sm">
+                            <thead class="thead-dark"> 
+                                <th>Nom</th>
+                                <th>Description</th>
+                                <th>Montant</th>
+                                <th>Date</th>
+                                <th>Catégorie</th>
+                                <th>Partageable</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </thead>
+                            <tbody >
+                                {% for ecriture in listEcritures %}
+                                    {% if  ecriture.sensflux =='1' %}
+                                        <tr class="ecritureCredit" onclick="document.location = '';" >
+                                    {% else%}
+                                        <tr class="ecritureDebit"  onclick="document.location = '';" >
+                                    {% endif %}
+                                            <td>{{ecriture.nom}} </td>
+                                            <td>{{ecriture.description}}</td>
+                                            <td>{{ecriture.montant}} </td>
+                                            <td>{{ecriture.date|date('d-m-Y')}} </td>
+                                            <td>{{ecriture.categorie.nom}} </td>
+                                            <td>{{ecriture.partageable}}</td>
+                                            <td><a href='{{ path('editer_ecriture',{'id':ecriture.id}) }}'>Modifier</a></td>
+                                            <td><a href='{{ path('supprimer_ecriture',{'id':ecriture.id}) }}'> Effacer </a></td>
+                                        </tr>
+                                {% endfor %}
+                                <td style="visibility:hidden"></td>
+                                <td style="visibility:hidden"></td>
+                                <td> {{sommeEcritures}}</td>
+                            </tbody>
+                        </table>
+                        <div class='groupe-button'>
+                            <a href="{{ path('ajouter_ecriture')}}"> <input class='btn btn-primary' type="button" value="Ajouter écriture"> </a>
+                            <a href="{{ path('ajouter_categorie')}}"> <input class='btn btn-primary' type="button" value="Ajouter catégorie"> </a>
+                            <input id="clickme"class='btn btn-primary' type="button" value="Recherche"> 
+                            <a href="{{ path('menu_comptabilite')}}"> <input class='btn btn-primary' type="button" value="Reset"> </a>
+                            
+                        </div>
+                        
+                        <br><br>
+                        <div id="recherche" style='display:none; width:25vw;'> 
+                            <h3 style='text-align:center;'>Recherche</h3>
+                            Dépense : <input id='depense'type="checkbox"><br>
+                            Revenu : <input id='revenu' type="checkbox"><br>
+
+                            Du<input type="text" class="datepicker form-control " id='inputDate1' placeholder='01/01/2018'>
+                            Au<input  type="text" class="datepicker form-control "id='inputDate2' placeholder='01/01/2018'>
+
+                            <select  class="form-control select" id='selectCategorie' >
+                                <option value='0'>Choisir une catégorie</option>
+                            {% for categorie in listCategories %}
+                                <option value='{{categorie.nom}}'>{{categorie.nom}}</option>
+                            {% endfor%}
+                            </select>
+                            <br>
+                            <a id="lienGenerationEntreDates" href="#"><button class='btn btn-primary' onclick="rechercher();" >Rechercher</button></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+         
+        </main>
+        {% endblock %}
+        
+        {% block javascripts %}
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> 
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            
+            <script>
+            function rechercher()
+            {
+                var valInputDepense=document.getElementById('depense').checked;
+                var valInputRevenu=document.getElementById('revenu').checked;
+                var valInputDate1=document.getElementById('inputDate1').value;
+                var valInputDate2=document.getElementById('inputDate2').value;
+                var varSelectCategorie=document.getElementById('selectCategorie').value; 
+                
+                if (valInputDepense === true && varSelectCategorie ==='0')
+                {
+                    var flux=0;
+                    var pathToRedirect ='../../comptabilite/rechercher-entre-dates/'+valInputDate1+'&'+valInputDate2+'&'+flux;
+                    document.getElementById("lienGenerationEntreDates").href=pathToRedirect; 
+                }
+                else if (valInputRevenu === true && varSelectCategorie ==='0')
+                {
+                    var flux=1;
+                    var pathToRedirect ='../../comptabilite/rechercher-entre-dates/'+valInputDate1+'&'+valInputDate2+'&'+flux;
+                    document.getElementById("lienGenerationEntreDates").href=pathToRedirect; 
+                }
+                else{
+                    var pathToRedirect ='../../comptabilite/rechercher-entre-dates/'+valInputDate1+'&'+valInputDate2;
+                    console.log(pathToRedirect);
+                    document.getElementById("lienGenerationEntreDates").href=pathToRedirect;  
+                }
+                if (varSelectCategorie !=='0')
+                {
+                    var pathToRedirect ='../../comptabilite/rechercher-categorie-entre-dates/'+valInputDate1+'&'+valInputDate2+'&'+varSelectCategorie;
+                    document.getElementById("lienGenerationEntreDates").href=pathToRedirect; 
+                }
+                
+            }
+            
+            </script>
+            
+            <script>
+                $( function() {
+                $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+
+                $.datepicker.regional['fr'] = {
+                closeText: 'Fermer',
+                prevText: '&#x3c;Préc',
+                nextText: 'Suiv&#x3e;',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier','Fevrier','Mars','Avril','Mai','Juin',
+                'Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+                monthNamesShort: ['Jan','Fev','Mar','Avr','Mai','Jun',
+                'Jul','Aou','Sep','Oct','Nov','Dec'],
+                dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+                dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+                dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd-mm-yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '',
+                numberOfMonths: 1,
+                showButtonPanel: true
+                };
+                $.datepicker.setDefaults($.datepicker.regional['fr']);
+
+                $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
+                    dayNamesShort: $.datepicker.regional[ "fr" ].dayNamesShort,
+                    dayNames: $.datepicker.regional[ "fr" ].dayNames,
+                    monthNamesShort: $.datepicker.regional[ "fr" ].monthNamesShort,
+                    monthNames: $.datepicker.regional[ "fr" ].monthNames
+                });
+
+                $( ".datepicker" ).datepicker();
+            });
+            </script>
+            <script>
+            $( "#clickme" ).click(function() {
+                $( "#recherche" ).toggle( "slow", function() {
+                  // Animation complete.
+                });
+            });
+            </script>
+        {% endblock %}
+</html

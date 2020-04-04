@@ -1,0 +1,48 @@
+index:
+    path: /
+    controller: App\Controller\PortfolioController::index
+    
+comptabilite:
+    path: /comptabilite
+    controller: App\Controller\PortfolioController::menuComptabilite
+
+menu_comptabilite:
+    path: /comptabilite/menu_comptabilite
+    controller: App\Controller\PortfolioController::menuComptabilite    
+    
+ajouter_ecriture:
+    path: /comptabilite/ajouter-ecriture
+    controller: App\Controller\PortfolioController::ajouterEcriture
+    
+ajouter_categorie:
+    path: /comptabilite/ajouter-categorie
+    controller: App\Controller\PortfolioController::ajouterCategorie
+
+editer_ecriture:
+    path: /comptabilite/editer-ecriture/{id}
+    controller: App\Controller\PortfolioController::editerEcriture
+    
+editer_categorie:
+    path: /comptabilite/editer-categorie/{id}
+    controller: App\Controller\PortfolioController::editerCategorie
+
+supprimer_ecriture:
+    path: /comptabilite/supprimer-ecriture/{id}
+    controller: App\Controller\PortfolioController::supprimerEcriture
+    
+supprimer_categorie:
+    path: /comptabilite/supprimer-categorie/{id}
+    controller: App\Controller\PortfolioController::supprimerCategorie
+ 
+    
+recherche_entre_dates_flux:
+    path: /comptabilite/rechercher-entre-dates/{date1}&{date2}&{sensflux}
+    controller: App\Controller\PortfolioController::rechercheEntreDatesFlux
+    
+recherche_entre_dates:
+    path: /comptabilite/rechercher-entre-dates/{date1}&{date2}
+    controller: App\Controller\PortfolioController::rechercheEntreDates
+    
+recherche_categorie_entre_dates:
+    path: /comptabilite/rechercher-categorie-entre-dates/{date1}&{date2}&{categorie}
+    controller: App\Controller\PortfolioController::rechercheCategorieEntreDates

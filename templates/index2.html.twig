@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125346989-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-125346989-1');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{asset('assets/img/MoiRondContourTest.png')}}" />
+        <title>{% block title %}Portfolio - Clément Thuet {% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+            <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+        {% block body %}
+            
+        <aside class="col-md-12 leftsidebar" >
+        <div class="site-sidebar-inner">
+            <a href="/" class="person">
+                <div class="person-avatar ">
+                   <img src="{{asset('assets/img/roundMe.png')}}" alt="Photo de Clément Thuet" class="avatar ">
+                </div>
+                <div class="person-content">
+                   <h1 class="person-title">Thuet Clément </h1>
+                   <h2 class="person-subtitle">Développeur web full-stack </h2>
+                </div>
+            </a>
+
+            <nav class="block main-navigation">  
+                <div class="navigation-extend-bar">
+                      <a href="#" class="navigation-extend-button js-extend-main-navigation">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                </div>
+                <div class="row nav-toggle" >
+                    <nav class="col-sm-12 navbar" >
+                        <ul>
+                            <li><a href="#cequejepropose">Ce que je propose</a></li>
+                            <li><a href="#quisuisje">Qui suis-je ?</a></li>
+                            <li><a href="#competences">Compétences</a> </li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            {#<li><a href="#culture">Culture</a></li>#}
+                        </ul>
+                    </nav>
+                <div class="col-sm-12 block block-social">
+                    <div class="block-title">Pour me contacter</div>
+                    <div class="block-content">
+                        <div class="social-icons">
+                           
+                            <div class="button button-icon">
+                              <i class="mail fa fa-envelope"></i>
+                            </div>
+                            
+                            <div onclick="window.open('https://www.linkedin.com/in/clément-thuet', '_blank');" class="button button-icon">
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                            <div onclick="window.open('https://github.com/ClementThuet', '_blank');" class="button button-icon">
+                                <i class="fa fa-github-square"></i>
+                            </div>
+                            <div class='mailAdress'>clementthuet7@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </div>
+        </aside>
+        
+        <div class="col-lg-9 offset-lg-3 col-sm-12 col-12 rightside" >
+            <h1 class="titrechercherdeveloppeur">Vous cherchez un développeur web ?<br> Vous êtes au bon endroit</h1>
+            
+            <h2 class="titrequisuisje" id="cequejepropose">Ce que je propose</h2>
+            <div class="complement-titre">Deux options</div>
+            <h3 class='titreService'> La création de logiciels sur mesure</h3>
+            <p class='paraQuisuisje'> Les logiciels vendus dans le commerce pour votre activité ne répondent pas tout à fait à vos besoins, vous les trouvez compliqués à l'utilisation ou alors ils n'existent tout simplement pas ?
+            </p>
+            
+             <p class='paraQuisuisje'>Je vous propose d'étudier avec vous vos problématiques réelles et de développer en conséquence le logiciel qu'il VOUS faut.
+             </p>
+             
+            <p class='paraQuisuisje'>Les solutions que je propose sont hébérgés dans le cloud et ainsi accessibles depuis n'importe quel outil permettant de naviguer sur internet.
+            </p>
+            
+            <p class='paraQuisuisje'>
+            Imaginez toutes les possibilités qui s'ouvrent à vous : gérer les données de votre activité comme vous l'entendez, éditer vos documents exactement comme vous le souhaitez
+            , avoir un suivi précis de votre production, ventes, salariés, statistiques en tous genres, etc.
+            Vos désirs sont les seules limites. 
+            <br><br>
+            Si vous souhaitez automatiser et standardiser les tâches récurrentes dans votre activité, un logiciel de gestion est un excellent investissement pour développer votre entreprise et vous libérer du temps. 
+            </p>
+            
+            <h3 class='titreServiceSites '> La réalisation de sites web personnalisées</h3>
+            <p class='paraQuisuisje'>
+                Votre site est comme la vitrine de votre magasin ... mais potentiellement vue par des milliers de personnes, ne vaut-il pas mieux qu'il soit soigné et qu'il véhicule ce que vous voulez transmettre à vos visiteurs ?
+                <br>
+                Un site web bien pensé et bien conçu peut être un véritable atout dans votre statégie commerciale.
+                <br><br>
+                 Vente ? Présentation de vos produits et services ? Prise de rendez-vous ? Là encore, tout est possible.
+                <br><br>
+                Vous souhaitez un site différent de ceux pré-conçus ? Je pars d'une page blanche pour donner vie à votre projet.
+           </p>
+           <hr>
+            <h2 class="titrequisuisje" id="quisuisje">Qui suis-je ?</h2>
+            <div class="complement-titre">Laissez-moi me présenter</div>
+            <p class='paraQuisuisje'> Je m'appelle Clément Thuet et je suis développeur web freelance avec le statut d'auto-entrepreneur, j'ai commencé le développement web car 
+                j'aimais la possibilité de donner vie à mes idées, et petit à petit je me 
+                suis pris de passion pour les défis que l'on peut y relever.</p>
+            <p class='paraQuisuisje'>Aujourd'hui je trouve formidables les challenges apportés par les professionnels
+                qui ont besoin de simplifier leurs tâches et de se dégager du temps.<br>
+            À chaque projet je prends plaisir à découvrir et expérimenter de nouvelles choses.</p>
+            <p class='paraQuisuisje'>Je suis toujours à la recherche de nouveaux projets excitants !<br><br>
+                Je vous laisse découvrir mes principales compétences ainsi que mes dernières réalisations.</p>
+
+
+        <hr>
+            <h2 class='titrecequejesaisfaire' id="competences">Compétences</h2>
+            <div class="complement-titre">Ce que je sais faire</div>
+            <div class='row'>
+                <div class='col-md-12 col-12'>
+                     <div id=''>
+                        <canvas id="myChart" ></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        <hr>
+            <h2 class='titrecequejesaisfaire' id="portfolio">Portfolio</h2>
+            <div class="complement-titre">Mes derniers projets</div>
+            
+            <div class="slide">
+                <div>
+                    <div class='row block-realizations'>
+                        <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
+                        <div class='col-md-6 col-sm-12 col-12'>
+                            <h3> Logiciel de gestion médicale</h3>
+                            <img class='screenshot' src="{{asset('assets/img/screen/mtcdp.png')}}" alt="Screenshot projet gestion médicale, fiche patient">
+                        </div>
+                        <div class='col-md-6 col-12 block-realizations-description'>
+                            <span class='field-description'>Année : </span> 2018<br>
+                            <span class='field-description'>Client : </span> David P, médecin traditionnel chinois (Oise)<br>
+                            <span class='field-description'>Objectifs : </span>
+                            <ul class='list-obj'>
+                                <li>Gérer les informations des patients : informations personnelles, antécédents, allergies, historique des visites et des traitements, etc</li>
+                                <li>Éditer des documents : prescriptions, notes d'honoraire et rattacher aux patients des documents externes (comptes rendu médicaux, radiographies, etc)</li>
+                                <li>Suivre les variations du stock</li>
+                                <li>Avoir une base de données des produits prescriptibles</li>
+                                <li>Analyser l'évolution du chiffre d'affaire</li>
+                            </ul>
+                          <span class='field-description'>Mon rôle : </span>Étude des besoins, proposition de solutions, développement, mise en place, améliorations après retours<br>
+                          <span class='field-description'>Technologies : </span>Symfony 4, Twig, Twitter Bootstrap, JQuery
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class='row block-realizations'>
+                        <div class='col-md-6 col-sm-12 col-12 '>
+                            <h3> Logiciel de gestion d'une bibliothèque</h3>
+                            <img class='screenshot' src="{{asset('assets/img/screen/sfbiblio-listeLivres.png')}}" alt="Screenshot projet gestion bibliothque, fiche patient">
+                        </div>
+                        <div class='col-md-6 col-12 block-realizations-description'>
+                            <span class='field-description'>Année : </span> 2017<br>
+                            <span class='field-description'>Client : </span> Marie-Bénédicte, enseignante et directice d'école maternelle (Oise)<br>
+                            <span class='field-description'>Objectifs : </span>
+                            <ul class='list-obj'>
+                                <li>Mettre en place le suivi des livres que possède l'école grâce à des codes barres</li>
+                                <li>Suivre les emprunts réalisés et les échanges avec d'autres bibliothèques</li>
+                                <li>Permettre aux élèves (3-5 ans) de réaliser leurs emprunts en autonomie avec une douchette</li>
+                            </ul>
+                            <span class='field-description'>Mon rôle : </span>Étude des besoins, proposition de solutions, développement, mise en place, améliorations après retours<br>
+                            <span class='field-description'>Technologies : </span>Symfony 4, Twig, Twitter Bootstrap
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <hr>
+            
+           {#<h2 class='titreculture' id="culture">Culture</h2>
+            <div class="complement-titre">Pour mieux me connaître ...</div>
+            	<p id="slide-description"></p>
+                
+                <div class="slider-culture" >
+                    <div style="margin-right:5vw;margin-left:5vw;">
+                        <div class="description" data-categorie='filmseries' style="display:none;">Films et séries</div>
+                        <div>
+                            <img class="logo-culture"  src="{{asset('assets/img/culture_logos/culture_logo_films.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div style="margin-right:5vw;margin-left:5vw;">
+                        <div  class="description"  data-categorie='musique' style="display:none;">Musique</div>
+                        <div>
+                            <img class="logo-culture" src="{{asset('assets/img/culture_logos/culture_logo_musique.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div style="margin-right:5vw;margin-left:5vw;">
+                        <div class="description" data-categorie='sport' style="display:none;">Sports</div>
+                        <div>
+                            <img class="logo-culture" src="{{asset('assets/img/culture_logos/culture_logo_sport.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div style="margin-right:5vw;margin-left:5vw;">
+                        <div class="description" data-categorie='lecture' style="display:none;">Lectures</div>
+                        <div>
+                            <img class="logo-culture" src="{{asset('assets/img/culture_logos/culture_logo_lecture.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div style="margin-right:5vw;margin-left:5vw;">
+                        <div class="description" data-categorie='jeuxvideo' style="display:none;">Jeux vidéos</div>
+                        <div>
+                            <img class="logo-culture" src="{{asset('assets/img/culture_logos/culture_logo_jeuxvideos.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="slider-filmseries"  >
+                    <div class="sous-categorie">
+                        <div class="sous-description" id="prem-sous-description" style="display:none;" ></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_timeout.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_fightclub.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                            <div  class="sous-description"  style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_rastarocket.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                            <div  class="sous-description"  style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_derniertrainpourbusan.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                            <div  class="sous-description"  style="display:none;"> </div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_kaamelott.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                            <div  class="sous-description"  style="display:none;"> </div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_breakingbad.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;"> </div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_fearthewalkingdead.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>    
+                    <div class="sous-categorie">
+                            <div  class="sous-description"  style="display:none;"> </div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_thestrain.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="slider-musique">
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;"></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_keryjames.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;"></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_medine.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;" ></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_lindseystirling.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;" ></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_mcsolaar.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;" ></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_riles.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-lecture" >
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;"></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_semainede4h.png')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;"></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_perericheperepauvre.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_divergente.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                        <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_hungergames.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="slider-sport" >
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;">4 ans de pratique</div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_badminton.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;">2 ans de pratique</div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_musculation.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;"></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_basketball.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-jeuxvideo" >
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;">Depuis mars 2016, <a href='https://statsroyale.com/fr/profile/2GYU9VYU'><b>voir mon profil</b></a></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_clashroyal.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div  class="sous-description"  style="display:none;">Depuis octobre 2015, <a href='https://statsroyale.com/https://lolprofile.net/fr/summoner/euw/MrTaiwo7#update/profile/2GYU9VYU'><b>voir mon profil</b></a></div>
+                        <div>
+                            <img class="image-culture"  src="{{asset('assets/img/culture_illustrations/culture_image_lol.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                    <div class="sous-categorie">
+                        <div class="sous-description" style="display:none;">Particulièrement fan d'<i>Ocarina of time</i> et de <i>Wind waker</i></div>
+                        <div>
+                            <img class="image-culture" src="{{asset('assets/img/culture_illustrations/culture_image_zelda.jpg')}}" alt="logo 9GAG">
+                        </div>
+                    </div>
+                </div>
+                
+                <p id="slide-sous-description"></p>  
+    
+        </div>       
+        <br> <br> <br>
+        #}
+        </main>
+        {% endblock %}
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+ 
+        <script>
+        $( ".navigation-extend-bar" ).click(function() {
+            $( ".nav-toggle" ).slideToggle( "slow", function() {
+              // Animation complete.
+            });
+          });
+        $( ".mail" ).click(function() {
+            $( ".mailAdress" ).slideToggle( "fast", function() {
+              // Animation complete.
+            });
+          });
+        $(document).ready(function() {
+            //Slide portfolio
+            $(".slide").slick({
+              infinite: true,
+              arrow:false,
+              cssEase: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+              speed: 900,
+              dots:true,
+              accessibility:false
+            });
+            
+            //Slide culture categories
+            $(".slider-culture").slick({
+                centerMode: true,
+                 infinite: true,
+                 dots:true,
+                 centerPadding: '10px',
+                 slidesToShow: 3,
+                 slidesToScroll: 3,
+                 cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                 variableWidth: true,
+                accessibility:false,
+               
+            });
+            $(".slider-filmseries").slick({
+                centerMode: true,
+                centerPadding: 0,
+                 infinite: true,
+                 slidesToShow: 1,
+                 variableWidth: true,
+                cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                accessibility:false,
+                dots:true,
+               
+            });
+            
+            $(".slider-musique").slick({
+                centerMode: true,
+                centerPadding: 0,
+                 infinite: true,
+                 slidesToShow: 1,
+                 cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                 variableWidth: true,
+                accessibility:false,
+                dots:true,
+                
+            });
+           
+            $('slider-musique').slick("slickGoTo",1,true);
+            $('slider-musique').slick("slickGoTo",0,true);
+            $(window).on('load', function(){
+               
+        });
+        
+            $(".slider-sport").slick({
+                centerMode: true,
+                centerPadding: 0,
+                 infinite: true,
+                 slidesToShow: 1,
+                 cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                 variableWidth: true,
+                 dots:true,
+                accessibility:false,
+                
+            });
+            
+            $(".slider-jeuxvideo").slick({
+                centerMode: true,
+                centerPadding: 0,
+                 infinite: true,
+                 slidesToShow: 1,
+                 cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                 variableWidth: true,
+                 dots:true,
+                accessibility:false,
+                
+            });
+            
+            $(".slider-lecture").slick({
+                centerMode: true,
+                centerPadding: 0,
+                 infinite: true,
+                 slidesToShow: 3,
+                 cssEase: "cubic-bezier(0.3, 0.3, 0.3, 0.3)",
+                 speed:0,
+                 variableWidth: true,
+                 dots:true,
+                accessibility:false,
+                
+            });
+          });
+          
+        //Initialisation
+        $(".slider-culture").on('init', function(event, slick, direction){
+            //Hide all the sub-category slide onload
+         $(".slider-musique").hide();
+            $(".slider-sport").hide();
+            $(".slider-jeuxvideo").hide();
+            $(".slider-lecture").hide();
+            
+            var descri = $('.slick-center .description').html();
+            var divResult=$('#slide-description');
+            divResult.html(descri);
+            
+            
+             //sub categories
+            var divSousResult=$('#slide-sous-description');
+            var sousDescri =  $('#prem-sous-description').html();
+            divSousResult.html(sousDescri);
+            
+            
+        });
+
+
+        //Events on click (arrows)
+        $('.slider-culture').click(function() {
+            var descri = $('.slick-center .description').html();
+            var divResult=$('#slide-description');
+            divResult.html(descri);
+            
+            var categorie = $('.slick-center .description').attr('data-categorie');
+             //Hide all sub-categoies
+            $(".slider-musique").hide();
+            $(".slider-filmseries").hide();
+            $(".slider-sport").hide();
+            $(".slider-jeuxvideo").hide();
+            $(".slider-lecture").hide();
+            $(".slider-"+categorie).show();
+            
+            //Show first sub description on category click
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-'+categorie);
+             //Hack for center slide image
+            slideencours.slick("slickGoTo",1,true);
+            slideencours.slick("slickGoTo",0,true);
+        
+            var sousDescri =  $(slideencours).find("*[data-slick-index=0]").find(".sous-description").html();
+            divResult.html(sousDescri);
+           
+         });
+         
+         $('.slider-filmseries').click(function() {
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-filmseries').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+         });
+         
+         $('.slider-musique').click(function() {
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-musique').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+         });
+         
+        $('.slider-sport').click(function() {
+           var divResult=$('#slide-sous-description');
+           var slideencours=$('.slider-sport').slick('slickCurrentSlide');
+           var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+           divResult.html(sousDescri);
+        });
+        
+        $('.slider-jeuxvideo').click(function() {
+           var divResult=$('#slide-sous-description');
+           var slideencours=$('.slider-jeuxvideo').slick('slickCurrentSlide');
+           var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+           divResult.html(sousDescri);
+        });
+        
+        $('.slider-lecture').click(function() {
+           var divResult=$('#slide-sous-description');
+           var slideencours=$('.slider-lecture').slick('slickCurrentSlide');
+           var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+           divResult.html(sousDescri);
+        });
+        
+        //Events on swipe
+        $(".slider-culture").on('swipe', function(event, slick, direction){
+            var descri = $('.slick-center .description').html();
+            var divResult=$('#slide-description');
+            divResult.html(descri);
+            var categorie = $('.slick-center .description').attr('data-categorie');
+             //Hide all sub-categoies
+            $(".slider-musique").hide();
+            $(".slider-filmseries").hide();
+            $(".slider-sport").hide();
+            $(".slider-jeuxvideo").hide();
+            $(".slider-lecture").hide();
+            $(".slider-"+categorie).show();
+            
+            //Show first sub description on category slide
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-'+categorie);
+            //Hack for center slide image
+            slideencours.slick("slickGoTo",1,true);
+            slideencours.slick("slickGoTo",0,true);
+        
+            var sousDescri =  $(slideencours).find("*[data-slick-index=0]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+        
+        $(".slider-filmseries").on('swipe', function(event, slick, direction){
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-filmseries').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+        
+        $(".slider-musique").on('swipe', function(event, slick, direction){
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-musique').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+        
+        $(".slider-sport").on('swipe', function(event, slick, direction){
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-sport').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+        
+        $(".slider-jeuxvideo").on('swipe', function(event, slick, direction){
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-jeuxvideo').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+        
+        $(".slider-lecture").on('swipe', function(event, slick, direction){
+            var divResult=$('#slide-sous-description');
+            var slideencours=$('.slider-lecture').slick('slickCurrentSlide');
+            var sousDescri =  $(this).find("*[data-slick-index="+slideencours+"]").find(".sous-description").html();
+            divResult.html(sousDescri);
+        });
+       
+        </script>
+        <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["HTML/CSS", "JS",'PHP','Symfony','Photoshop'],
+                datasets: [{
+                    data: [3, 2.5,3.1, 3,1.2],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                 },
+                tooltips: {enabled: false},
+                hover: {mode: null},
+                scales: {
+                    yAxes: [{
+                        display: true,
+                ticks: {
+                    min: 0,
+                    max: 4,
+                    stepSize: 0.2,
+                    suggestedMin: 0,
+                    suggestedMax: 4,
+                    callback: function(label) {
+                      switch (label) {
+                        case 0:
+                          return 'Jamais entendu parler';
+                        case 1:
+                          return 'Débutant';
+                        case 2:
+                          return 'Intermédiaire';
+                        case 3:
+                          return 'Confirmé';
+                        case 4:
+                          return 'Google?  Plus besoin';
+                      }
+                    }
+                  },
+                  title: {
+                    display: false
+                },
+                  gridLines: {
+                    display: true
+                  }
+                }]
+                }
+            }
+        });
+        </script>
+        
+        {% endblock %}
+    </body>
+</html>

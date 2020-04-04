@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{parent()}}
+{%endblock%}
+
+{% block body %}
+    {{parent()}}
+    <div class='container-fluid encartSuppr'>
+        <div class='row'>
+            <div class='col-md-8 offset-2'>
+                <h1 class='titresH1'>Supprimer une écriture</h1>
+                <p class='paragrapheExplicatif'>
+                    Êtes-vous certain de vouloir supprimer l'écriture  "{{ ecriture.nom }}" ?<br>
+                </p>
+                    
+                <form action="{{ path('supprimer_ecriture', {'id': ecriture.id}) }}" method="post">
+                    <div class='MenuBasCentre'>
+                        <a href="{{ path('menu_comptabilite',{'page':1}) }}" ><input type='button' class="btn btn-primary" value='Retour'></a>
+                        <input type="submit" value="Supprimer" class="btn btn-danger" >
+                    </div>
+                    {{ form_rest(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{%endblock%}

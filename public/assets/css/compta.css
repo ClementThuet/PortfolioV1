@@ -1,0 +1,17 @@
+.ecritureCredit{background-color: #c7f1ce!important;}
+.ecritureDebit{background-color: #f1c7c7 !important;}
+.table-bordered td, .table-bordered th{border : 1px solid black;}
+.titreCompta{
+    margin-top:2vh;
+    margin-bottom:3vh;
+    text-align: center;
+    font-size: 36px;
+    text-transform: none;
+}
+.groupe-button{text-align:center;}
+.btn{border:1px solid black;}
+.datepicker{ width:15vw;}
+.select{
+    width:15vw;
+    margin-top:2vh;
+}
